@@ -1,0 +1,7 @@
+[package]
+name = "rust-app"
+description = "A Rust app template with DevOps best practices."
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

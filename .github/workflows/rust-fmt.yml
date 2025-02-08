@@ -2,12 +2,11 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-# rust-clippy is a tool that runs a bunch of lints to catch common
-# mistakes in your Rust code and help improve your Rust code.
-# More details at https://github.com/rust-lang/rust-clippy
-# and https://rust-lang.github.io/rust-clippy/
+# rust-fmt is a tool that formats your Rust code and help improve your Rust code.
+# More details at https://github.com/rust-lang/rustfmt
+# and https://github.com/rust-lang/rustfmt
 
-name: Lint
+name: Format
 
 on:
   push:
@@ -16,8 +15,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  lint:
-    name: Run rust-clippy analyzing
+  format:
+    name: Run rust-fmt
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +28,8 @@ jobs:
         with:
           profile: minimal
           toolchain: stable
-          components: clippy
+          components: fmt
           override: true
 
-      - name: Run rust-clippy
-        run: cargo clippy
+      - name: Run rust-fmt
+        run: cargo fmt
